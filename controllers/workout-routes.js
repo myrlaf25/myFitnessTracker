@@ -18,7 +18,7 @@ const { Workout } = require('../models')
         try{
             const id = req.params.id;
             const data= req.body;
-            const data = await
+            const workoutData = await
              Workout.updateOne({_id: id} ,{ $push: {exercises: data }})
             
         } catch(err){
