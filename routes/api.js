@@ -90,7 +90,7 @@ router.put('/workouts/:id', async (req, res) => {
 
 //POST create a new workout /api/workouts
 router.post('/workouts', async function (req, res) {
-    const workout= new Workout(req.body)
+    
     try {
         const workoutData = await
             Workout.create({ type: "exercises" })
