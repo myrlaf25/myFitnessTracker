@@ -23,7 +23,7 @@ router.get("/workouts", async function (req, res) {
 
 
 router.get('/workouts/range', async (req, res) => {
-    const workout= await new Workout(req.body)
+    
     try {
         const workoutData = await Workout.aggregate([
             { $limit : 7},
@@ -102,9 +102,6 @@ router.post('/workouts', async function (req, res) {
 
     }
 })
-
-
-
 
 module.exports = router;
 
