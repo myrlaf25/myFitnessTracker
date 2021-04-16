@@ -45,14 +45,3 @@ const Workout = mongoose.model("Workout", WorkoutSchema);
 
 module.exports = Workout;
 
-// exercises: [
-            
-//     {
-//         type: Schema.Types.ObjectId,
-//         ref: "Exercise",
-//     }
-// ],
-// totalDuration: {
-//     type: Number,
-//     default: 0
-// }
