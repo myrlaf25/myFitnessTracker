@@ -17,15 +17,15 @@ app.use(express.static("public"));
 
 app.use(require('./routes'));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/myFitnessTracker", 
+{ 
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+ });
 
-// Workout.create(workout)
-//   .then(dbWorkout => {
-//     console.log(dbWorkout);
-//   })
-//   .catch(({ message }) => {
-//     console.log(message);
-//   });
+
 
 
 // Start the server
