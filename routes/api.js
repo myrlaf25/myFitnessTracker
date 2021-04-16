@@ -3,15 +3,24 @@ const { Workout } = require('../models')
 
 
 // GET all workouts /api/workouts
-router.get('/workouts', async (req, res) => {
+router.get("/workouts", async function (req, res) {
     try {
-        const workoutData = await Workout.find({}).populate('workout')
-        res.json(workoutData)
+      const data = await Workout.aggregate([
+        {
+          $addFields: {
+            totalDuration: {
+              $sum: "$exercises.duration",
+            },
+          },
+        },
+      ]);
+      res.json(data);
+    } catch (err) {
+      console.log(err);
+      res.status(500).send(err);
     }
-    catch (err) {
-        res.status(500).json(err);
-    }
-})
+  });
+
 
 router.get('/workouts/range', async (req, res) => {
     const workout= await new Workout(req.body)
@@ -92,32 +101,6 @@ router.post('/workouts', async function (req, res) {
 
     }
 })
-
-//GET workouts range /api/workouts/range
-// router.get('/workouts/range', async function (req, res){
-//     try{
-//         const workoutDataRange = Workout.find({}).limit(5);
-//         res.json(workoutDataRange);
-//     }
-//     catch(err){
-//        res.status(500).json(err);
-//     }
-// })
-
-// router.get("/workouts/range", async (req, res) => {
-//     try {
-//         const workout = await Workout.aggregate([{
-//             $limit: 7
-//         }, {
-//             $sort: { date: -1}
-//         }])
-//         res.json(workout)
-//     }
-
-//     catch (err) {
-//         res.status(400).json(err);
-//     }
-// });
 
 
 
