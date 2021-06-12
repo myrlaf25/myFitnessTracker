@@ -16,7 +16,7 @@
 
 # Description
 
-This app is a fitness tracker. The front end code was provided. This app is to help the user keep track of their workout routine, either a resistance workout or cario workout. I created a Mongo database with a Mongoose schema and the handle routes with Express.js.  
+This is a fitness tracker application. The front end code was provided by Trilogy/UofA. This app is will assist the user in keeping track of their workout routines, either a resistance workout or cardio workout. I created a Mongo database with a Mongoose schema and handled the routes with Express.js.  
 
 # User Story
 
@@ -27,7 +27,7 @@ This app is a fitness tracker. The front end code was provided. This app is to h
 
 ## Business Context
 
-The consumer will reach their fitness goals more quickly when they track their workout progress.
+The consumer will reach their fitness goals more quickly, when they track their workout progress.
 
 ## Installation
 
